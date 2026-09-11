@@ -5,3 +5,4 @@ dist-packager/
 *.log
 .DS_Store
 .mcide/
+*.tsbuildinfo
