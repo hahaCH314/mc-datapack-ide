@@ -1,0 +1,152 @@
+:root {
+  --bg-0: #1e1f22;
+  --bg-1: #252629;
+  --bg-2: #2b2d30;
+  --bg-3: #34363a;
+  --border: #3a3d41;
+  --text-0: #e6e6e6;
+  --text-1: #b5b8bd;
+  --text-dim: #7a7d82;
+  --accent: #5cb85c;
+  --accent-2: #4a9eea;
+  --danger: #e05252;
+  --warning: #d9a441;
+  --radius: 6px;
+  font-family: 'Segoe UI', 'Yu Gothic UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--text-0);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: var(--text-0);
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 1px solid var(--accent-2);
+}
+
+.btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text-0);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn:hover {
+  background: var(--bg-2);
+  border-color: var(--accent-2);
+}
+
+.btn-primary {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: #0c1116;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: rgba(224, 82, 82, 0.15);
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: var(--text-1);
+  padding: 2px 6px;
+  border-radius: var(--radius);
+}
+
+.btn-icon:hover {
+  background: var(--bg-3);
+  color: var(--text-0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.field-row label {
+  font-size: 12px;
+  color: var(--text-1);
+  font-weight: 600;
+}
+
+.field-row-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}

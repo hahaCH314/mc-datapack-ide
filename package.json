@@ -1,0 +1,69 @@
+{
+  "name": "mc-datapack-ide",
+  "version": "0.1.0",
+  "description": "Minecraft データパックを直感的に作れる専門IDE",
+  "main": "./out/main/index.js",
+  "author": "syunpoo419",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json && electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "npm run build && electron-builder",
+    "package:win": "npm run build && electron-packager . \"MC Datapack IDE\" --platform=win32 --arch=x64 --out=dist-packager --overwrite --asar --ignore=\"^/src($|/)\" --ignore=\"^/server($|/)\" --ignore=\"^/\\.git($|/)\" --ignore=\"^/dist($|/)\" --ignore=\"^/dist-packager($|/)\"",
+    "server": "node server/index.mjs"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.18.4",
+    "@codemirror/commands": "^6.7.1",
+    "@codemirror/language": "^6.10.8",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.36.1",
+    "@uiw/codemirror-theme-github": "^4.23.7",
+    "@uiw/react-codemirror": "^4.23.7",
+    "js-yaml": "^4.1.0",
+    "jszip": "^3.10.1",
+    "lib0": "^0.2.99",
+    "nanoid": "^5.0.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ws": "^8.18.0",
+    "y-protocols": "^1.0.6",
+    "y-websocket": "^3.1.0",
+    "yjs": "^13.6.21"
+  },
+  "devDependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@electron/packager": "^20.3.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/ws": "^8.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.21.5": true
+  },
+  "build": {
+    "appId": "com.syunpoo419.mcdatapackide",
+    "productName": "MC Datapack IDE",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}
