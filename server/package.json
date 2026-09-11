@@ -1,0 +1,17 @@
+{
+  "name": "mc-datapack-ide-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MC Datapack IDE のチーム機能用の中継サーバー (単体デプロイ用)",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "lib0": "^0.2.99",
+    "ws": "^8.18.0",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.21"
+  }
+}
